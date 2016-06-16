@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.CompanyDashboardNav {
+  padding: 15px 0;
+  border-bottom: 1px solid whiteSmoke;
+  padding-bottom: 0;
+  margin-bottom: 30px;
+  .CompanyDashboardNavLink {
+    color: $gray-medium;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 15px;
+  }
+}
+
+.CompanyDashboardNavLink.active {
+  border-bottom: 1px solid $main;
+}
+
+.CompanyDashboardWelcome {
+  margin-bottom: 30px;
+  padding: 0 15px;
+  font-size: 24px;
+  font-weight: 100;
+  color: $gray-medium;
+}

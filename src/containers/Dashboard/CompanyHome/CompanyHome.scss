@@ -1,0 +1,42 @@
+@import "../../../styles/variables.scss";
+
+.HomeBlock {
+  padding: 0!important;
+  .HomeBlockInner {
+    border: 1px solid whiteSmoke;
+    min-height: 440px;
+    h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 30px 15px;
+      color: $gray-medium;
+    }
+  }
+}
+
+.ScheduleList {
+  .ScheduleListItem {
+    font-size: 14px!important;
+    padding-left: 52px!important;
+    font-weight: 100!important;
+    color: $gray-medium-light!important;
+  }
+}
+
+.TalentMatchesList {
+  .TalentMatchesItem {
+    font-size: 14px!important;
+    font-weight: 100!important;
+    color: $gray-medium-light!important;
+    .TalentMatchesItemAvatar {
+      background-size: 100%!important;
+      background-repeat: no-repeat!important;
+    }
+  }
+}
+
+.CompanySelectMenu {
+  .CompanySelectMenuItem {
+    padding: 15px 0!important;
+  }
+}

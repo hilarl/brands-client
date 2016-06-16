@@ -1,19 +1,19 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
-class HomePage extends Component {
+class Organization extends Component {
   index() {
     return null
   }
   render() {
     return (
-      <div>
-      </div>
+      <div>Pages</div>
     );
   }
 }
 
-HomePage.PropTypes = {
+Organization.PropTypes = {
   index: PropTypes.array.isRequired
 };
 
-export default HomePage;
+export default Organization;

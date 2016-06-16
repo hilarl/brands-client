@@ -23,6 +23,7 @@
     "mocha": true
   },
   "rules": {
+    "strict": "off",
     "quotes": 0,
     "no-console": 1,
     "no-debugger": 1,

@@ -6,7 +6,9 @@ const styles = {
   },
   SignInButton: {
     color: "#6A96D2",
-    textTransform: "none"
+    textTransform: "none",
+    marginTop: "6px",
+    height: "40px"
   },
   LogoStyles: {
     color: "#6A96D2"
