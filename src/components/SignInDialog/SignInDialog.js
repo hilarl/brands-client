@@ -9,6 +9,8 @@ class SignInDialog extends Component {
     return (
       <Dialog {...this.props}
         contentStyle={styles.SignInDialogBody}
+        autoDetectWindowHeight={false}
+        autoScrollBodyContent={false}
       >
         <div className="SignInDialogTitle">
           <img className="SignInDialogLogo" src={require("../../../src/images/logo.png")} />
@@ -16,10 +18,6 @@ class SignInDialog extends Component {
         </div>
         <div className="SignInDialogForm">
           <SignInForm />
-        </div>
-        <div className="SignInDialogFooter">
-          <a className="SignInDialogFooterLink" href="#">Don't have an account yet?</a>
-          <a className="SignInDialogFooterLink" href="#">Forgot password?</a>
         </div>
       </Dialog>
     );

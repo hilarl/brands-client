@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+
+.TalentLeftMenu {
+  font-size: 14px!important;
+  width: 100%!important;
+}
+
+.TalentToolBar {
+  padding-top: 15px;
+}
+
+.ApplicationsList {
+  .ApplicationsListItem {
+    margin-left: 30px;
+    padding-right: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .ApplicationsListItemImage {
+    background-size: 100%!important;
+    width: 55px!important;
+    height: 55px!important;
+    margin-right: 40px!important;
+  }
+  .ApplicationsListCandidate {
+    margin-left: 20px!important;
+    font-size: 14px;
+    font-weight: 500;
+    color: $main;
+  }
+  .ApplicationsListRole {
+    margin-left: 20px!important;
+    font-weight: 300;
+    font-size: 14px;
+    color: $gray-medium-light;
+  }
+  .ApplicationsListLocation {
+    margin-left: 20px!important;
+    font-size: 13px;
+    display: inline-block;
+    line-height: 2;
+    margin-right: 15px;
+    font-weight: 100;
+    color: $gray-medium-light-alt;
+  }
+  .ApplicationsListSummary {
+    font-weight: 100;
+    font-size: 13px;
+    color: $gray-medium-light;
+  }
+  .ApplicationsListItemScoreLabel {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 45px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $gray-medium-light;
+    .score {
+      color: $green;
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+  }
+  .TalentAddButton {
+    fill: white!important;
+  }
+}

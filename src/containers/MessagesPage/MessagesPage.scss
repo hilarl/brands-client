@@ -1,0 +1,219 @@
+@import "../../styles/variables.scss";
+
+.MessagesPageSideBar {
+  padding: 0!important;
+  height: 80vh;
+  overflow: auto;
+}
+
+.MessagesPageMessageContainer {
+  padding: 0!important;
+  height: 69vh;
+  overflow: auto;
+  position: relative;
+  padding-bottom: 70px!important;
+  padding-top: 15px!important;
+}
+
+.ChatUserAvatar {
+  background-size: 100%!important;
+}
+
+.ChatUserRole {
+  font-size: 13px;
+  font-weight: 500;
+  color: $gray-medium-light;
+}
+
+.ChatUserName {
+  font-size: 13px;
+  color: $gray-medium;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.ChatMessageSummary {
+  font-size: 12px;
+  font-weight: 100;
+  color: $gray-medium-light-alt;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+.avatar img {
+    display: block;
+    border-radius: 20px;
+    height: 100%;
+}
+
+
+.chat-body .answer.left {
+    padding: 0 0 0 58px;
+    text-align: left;
+    float: left;
+}
+.chat-body .answer {
+    position: relative;
+    max-width: 600px;
+    overflow: hidden;
+    clear: both;
+}
+.chat-body .answer.left .avatar {
+    left: 0;
+}
+.chat-body .answer .avatar {
+    bottom: 36px;
+}
+.chat .avatar {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+.chat .avatar img {
+    display: block;
+    border-radius: 20px;
+    height: 100%;
+}
+.chat-body .answer .name {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: $gray-medium;
+    font-weight: 600;
+    line-height: 36px;
+}
+.chat-body .answer.left .avatar .status {
+    right: 4px;
+}
+.chat-body .answer .avatar .status {
+    bottom: 0;
+}
+.chat-body .answer.left .text {
+    background: $border-gray;
+    color: $gray-medium-light;
+    border-radius: 8px 8px 8px 0;
+}
+.chat-body .answer .text {
+    padding: 12px;
+    letter-spacing: 0.1px;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 26px;
+    position: relative;
+}
+.chat-body .answer.left .text:before {
+    left: -30px;
+    border-right-color: $border-gray;
+    border-right-width: 12px;
+}
+.chat-body .answer .text:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    border: 18px solid transparent;
+    border-bottom-width: 0;
+}
+.chat-body .answer.left .time {
+    padding-left: 12px;
+    color: $gray-medium-light-alt;
+}
+.chat-body .answer .time {
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 36px;
+    position: relative;
+    padding-bottom: 1px;
+}
+/*RIGHT*/
+.chat-body .answer.right {
+    padding: 0 58px 0 0;
+    text-align: right;
+    float: right;
+}
+
+.chat-body .answer.right .avatar {
+    right: 0;
+}
+.chat-body .answer.right .avatar .status {
+    left: 4px;
+}
+.chat-body .answer.right .text {
+    background: $main;
+    color: #ffffff;
+    border-radius: 8px 8px 0 8px;
+}
+.chat-body .answer.right .text:before {
+    right: -30px;
+    border-left-color: $main;
+    border-left-width: 12px;
+}
+.chat-body .answer.right .time {
+    padding-right: 12px;
+    font-size: 12px;
+    font-weight: 100;
+    color: $gray-medium-light-alt;
+}
+
+/**************ADD FORM ***************/
+.chat-body .answer-add {
+    clear: both;
+    position: fixed;
+    padding: 20px;
+    width: 62.5%;
+    background: white;
+    border: 1px solid $border-gray;
+    bottom: 0px;
+}
+.chat-body .answer-add input {
+    border: none;
+    background: none;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0;
+    color: #ffffff;
+}
+.chat input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+.chat-body .answer-add .answer-btn-1 {
+    background: url("http://91.234.35.26/iwiki-admin/v1.0.0/admin/img/icon-40.png") 50% 50% no-repeat;
+    right: 56px;
+}
+.chat-body .answer-add .answer-btn {
+    display: block;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+}
+.chat-body .answer-add .answer-btn-2 {
+    background: url("http://91.234.35.26/iwiki-admin/v1.0.0/admin/img/icon-41.png") 50% 50% no-repeat;
+    right: 20px;
+}
+.chat input::-webkit-input-placeholder {
+   color: #fff;
+}
+
+.chat input:-moz-placeholder { /* Firefox 18- */
+   color: #fff;
+}
+
+.chat input::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;
+}
+
+.chat input:-ms-input-placeholder {
+   color: #fff;
+}
+.chat input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}

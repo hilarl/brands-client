@@ -5,11 +5,15 @@ import FlatButton from 'material-ui/FlatButton';
 import SignInDialog from '../SignInDialog/SignInDialog';
 import * as actions from '../../actions/AuthActions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import {Popover, PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
 import Avatar from 'material-ui/Avatar';
+
+import IconButton from 'material-ui/IconButton';
+import ChatBubble from 'material-ui/svg-icons/communication/chat-bubble-outline';
+import NotificationsNone from 'material-ui/svg-icons/social/notifications-none';
 
 class Header extends Component {
   constructor(props) {
@@ -48,7 +52,6 @@ class Header extends Component {
   };
 
   signOutButton() {
-    console.log("signed out");
     return this.props.authenticate(false);
   }
 
@@ -66,6 +69,16 @@ class Header extends Component {
     }
     return (
       <div>
+        <div style={{marginTop: "-15px", display: "inline-block"}}>
+          <Link to="/messages">
+            <IconButton iconStyle={{fill: "#616C73"}}>
+              <ChatBubble />
+            </IconButton>
+          </Link>
+          <IconButton iconStyle={{fill: "#616C73"}}>
+            <NotificationsNone />
+          </IconButton>
+        </div>
         <Popover
           open={this.state.menu}
           anchorEl={this.state.anchorEl}
