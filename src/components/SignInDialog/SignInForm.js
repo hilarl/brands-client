@@ -15,7 +15,9 @@ class SignInForm extends Component {
       email: "",
       password: "",
       socialForm: true,
-      emailForm: false
+      emailForm: false,
+      signUpForm: false,
+      forgotPasswordForm: false
     }
     this.emailOnChange = this.emailOnChange.bind(this);
     this.passwordOnChange = this.passwordOnChange.bind(this);
@@ -96,15 +98,78 @@ class SignInForm extends Component {
             }}
           />
           <div className="SignInDialogFooter">
+            <a
+              className="SignInDialogFooterLinkInline"
+              href="#"
+              onClick={()=> {
+                this.setState({socialForm: false});
+                this.setState({emailForm: false});
+                this.setState({signUpForm: true});
+                this.setState({forgotPasswordForm: false});
+            }}>New User</a> &nbsp;&nbsp;&nbsp;
+
+            <a
+              className="SignInDialogFooterLinkInline"
+              href="#"
+              onClick={()=> {
+                this.setState({socialForm: false});
+                this.setState({emailForm: false});
+                this.setState({signUpForm: false});
+                this.setState({forgotPasswordForm: true});
+              }}>Forgot password?</a>
+
             <a className="SignInDialogFooterLink"
-              href="#">Forgot password?</a>
-              <a className="SignInDialogFooterLink"
-                onClick={()=> {
-                  this.setState({socialForm: true});
-                  this.setState({emailForm: false});
-                }}
-                href="#">Or sign in with facebook, twitter or google</a>
+              onClick={()=> {
+                this.setState({socialForm: true});
+                this.setState({emailForm: false});
+                this.setState({signUpForm: false});
+                this.setState({forgotPasswordForm: false});
+            }} href="#">Or sign in with facebook, twitter or google</a>
           </div>
+        </div>
+      )
+    }
+    if(this.state.signUpForm) {
+      return(
+        <div style={{marginTop: "15px", marginBottom: "30px"}}>
+          <TextField
+            floatingLabelText="Email Address"
+            fullWidth={true}
+            floatingLabelFocusStyle={styles.SignInInput.floatingLabelFocusStyle}
+            underlineFocusStyle={styles.SignInInput.underlineStyle}
+            onChange={this.emailOnChange}
+          />
+          <FlatButton
+            label="Continue"
+            rippleColor={styles.SubmitButton.rippleColor}
+            style={styles.SubmitButton}
+            labelStyle={styles.buttonStyles}
+            onClick={()=> {
+              browserHistory.push('/signup');
+            }}
+          />
+        </div>
+      )
+    }
+    if(this.state.forgotPasswordForm) {
+      return(
+        <div style={{marginTop: "15px", marginBottom: "30px"}}>
+          <TextField
+            floatingLabelText="Email Address"
+            fullWidth={true}
+            floatingLabelFocusStyle={styles.SignInInput.floatingLabelFocusStyle}
+            underlineFocusStyle={styles.SignInInput.underlineStyle}
+            onChange={this.emailOnChange}
+          />
+          <FlatButton
+            label="Email Password"
+            rippleColor={styles.SubmitButton.rippleColor}
+            style={styles.SubmitButton}
+            labelStyle={styles.buttonStyles}
+            onClick={()=> {
+              console.log('password')
+            }}
+          />
         </div>
       )
     }

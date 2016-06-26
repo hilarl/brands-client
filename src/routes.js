@@ -13,11 +13,13 @@ import UserManager from './containers/Dashboard/UserManager/UserManager';
 import Organization from './containers/Dashboard/Organization/Organization';
 import MessagesPage from './containers/MessagesPage/MessagesPage';
 import NotFoundPage from './components/NotFoundPage.js';
+import SignUpPage from './components/SignUpPage/SignUpPage.js';
 import RequireAuthentication from './components/RequireAuthentication/RequireAuthentication';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
+    <Route path="/signup" component={SignUpPage} />
     <Route path="home" component={RequireAuthentication(Dashboard)}>
       <IndexRoute component={CompanyHome}/>
       <Route path="/messages" component={MessagesPage} />

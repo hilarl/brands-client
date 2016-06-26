@@ -118,7 +118,7 @@ class Header extends Component {
           style={styles.MainHeader}
           title={
             <div style={styles.LogoStyles}>
-              <img style={{height: "33px", marginTop: "17px"}} src={require("../../../src/images/logoMain.png")} />
+              <Link to="/"><img style={{height: "33px", marginTop: "17px"}} src={require("../../../src/images/logoMain.png")} /></Link>
             </div>
           }
           iconElementRight={
