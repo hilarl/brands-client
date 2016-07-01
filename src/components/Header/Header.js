@@ -10,30 +10,35 @@ import {Popover, PopoverAnimationVertical} from 'material-ui/Popover';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Avatar from 'material-ui/Avatar';
+import DropDownMenu from 'material-ui/DropDownMenu';
 
 import IconButton from 'material-ui/IconButton';
 import ChatBubble from 'material-ui/svg-icons/communication/chat-bubble-outline';
 import NotificationsNone from 'material-ui/svg-icons/social/notifications-none';
 
+import './Header.scss';
+
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
-      menu: false
+      dialogOpen: false,
+      menu: false,
+      companyValue: 1
     };
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
+    this.handleCompanyChange = this.handleCompanyChange.bind(this);
   }
 
   handleOpen() {
-    this.setState({open: true});
+    this.setState({dialogOpen: true});
   }
 
   handleClose() {
-    this.setState({open: false});
+    this.setState({dialogOpen: false});
   }
 
   handleTouchTap (event) {
@@ -55,6 +60,8 @@ class Header extends Component {
     return this.props.authenticate(false);
   }
 
+  handleCompanyChange(event, index, value) { this.setState({companyValue: value})};
+
   signInButton() {
     if(!this.props.authenticated) {
       return (
@@ -68,8 +75,17 @@ class Header extends Component {
       );
     }
     return (
-      <div>
-        <div style={{marginTop: "-15px", display: "inline-block"}}>
+      <div style={{marginTop: "0"}}>
+        <div style={{display: "inline-block", lineHeight: "70px", top: "-8px"}}>
+        <DropDownMenu
+          style={{border: "none", top: "-7px"}}
+          underlineStyle={{border: "none"}} className="CompanySelectMenu"  value={this.state.companyValue} onChange={this.handleCompanyChange}>
+          <MenuItem className="CompanySelectMenuItem" value={1} primaryText={<div><span><img style={{height: "15px", marginRight: "10px"}} src="https://www.facebookbrand.com/img/fb-art.jpg"/></span> Facebook</div>} />
+          <MenuItem className="CompanySelectMenuItem" value={2} primaryText={<div><span><img style={{height: "15px", marginRight: "10px"}} src="http://northdallasgazette.com/wordpress/wp-content/uploads/2016/05/Google-logo-2015-G-icon.png"/></span> Google</div>} />
+          <MenuItem className="CompanySelectMenuItem" value={3} primaryText={<div><span><img style={{height: "15px", marginRight: "10px"}} src="http://www.bladecreativebranding.com/blog/wp-content/uploads/2014/11/New-2014-Air-Bnb-Logo.png"/></span> Airbnb</div>} />
+        </DropDownMenu>
+        </div>
+        <div style={{display: "inline-block"}}>
           <Link to="/messages">
             <IconButton iconStyle={{fill: "#616C73"}}>
               <ChatBubble />
@@ -88,20 +104,20 @@ class Header extends Component {
           animation={PopoverAnimationVertical}
         >
           <Menu>
-            <MenuItem primaryText="Refresh" />
-            <MenuItem primaryText="Help &amp; feedback" />
-            <MenuItem primaryText="Settings" />
-            <MenuItem primaryText="Sign out" onTouchTap={() => {this.signOutButton()}} />
+            <MenuItem className="UserMenuItem" primaryText="Refresh" />
+            <MenuItem className="UserMenuItem" primaryText="Help &amp; feedback" />
+            <MenuItem className="UserMenuItem" primaryText="Settings" />
+            <MenuItem className="UserMenuItem" primaryText="Sign out" onTouchTap={() => {this.signOutButton()}} />
           </Menu>
         </Popover>
-      <FlatButton
-        className="LoginButton"
-        onTouchTap={this.handleTouchTap}
-        children={<Avatar src="http://www.material-ui.com/images/ok-128.jpg" />}
-        primary={true}
-        style={styles.SignInButton}
-        hoverColor={"white"}
-      />
+        <FlatButton
+          className="LoginButton"
+          onTouchTap={this.handleTouchTap}
+          children={<Avatar src="http://www.material-ui.com/images/ok-128.jpg" />}
+          primary={true}
+          style={styles.SignInButton}
+          hoverColor={"white"}
+        />
       </div>
     );
   }
@@ -111,7 +127,7 @@ class Header extends Component {
       <div>
         <SignInDialog
           modal={false}
-          open={this.state.open}
+          open={this.state.dialogOpen}
           onRequestClose={this.handleClose}
         />
         <AppBar

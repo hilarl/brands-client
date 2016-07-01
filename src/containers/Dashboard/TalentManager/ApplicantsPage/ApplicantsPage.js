@@ -19,6 +19,8 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import FlatButton from 'material-ui/FlatButton';
 import {grey50, yellow500, blue500} from 'material-ui/styles/colors';
 
+import { Router, browserHistory } from 'react-router';
+
 const iconButtonElement = (
   <IconButton
     touch={true}
@@ -42,7 +44,18 @@ class ApplicantsPage extends Component {
     super(props);
     this.state = {
       value: 1,
+      companyValue: 1
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleCompanyChange = this.handleCompanyChange.bind(this);
+  }
+
+  handleChange(event, index, value) { this.setState({value})};
+
+  handleCompanyChange(event, index, value) { this.setState({companyValue: value})};
+
+  handlePostJob() {
+    browserHistory.push('new-job')
   }
 
   render() {
@@ -50,23 +63,21 @@ class ApplicantsPage extends Component {
       <List className="col-md-10 ApplicationsList">
         <Toolbar style={{background: "transparent", paddingRight: "0"}}>
           <div className="col-md-6" style={{padding: 0}}>
-            <DropDownMenu value={this.state.value} onChange={this.handleChange} style={{marginTop: "-5px"}}>
-              <MenuItem value={1} primaryText="All Broadcasts" />
-              <MenuItem value={2} primaryText="All Voice" />
-              <MenuItem value={3} primaryText="All Text" />
-              <MenuItem value={4} primaryText="Complete Voice" />
-              <MenuItem value={5} primaryText="Complete Text" />
-              <MenuItem value={6} primaryText="Active Voice" />
-              <MenuItem value={7} primaryText="Active Text" />
+            <DropDownMenu underlineStyle={{border: "none"}} value={this.state.value} onChange={this.handleChange} style={{marginTop: "-5px"}}>
+              <MenuItem value={1} primaryText="Recommended" />
+              <MenuItem value={2} primaryText="Latest" />
+              <MenuItem value={3} primaryText="Personality" />
+              <MenuItem value={4} primaryText="Talent" />
             </DropDownMenu>
           </div>
             <div style={{padding: 0, textAlign: "right", marginTop: "-5px"}} className="col-md-6">
-              <DropDownMenu style={{border: "none"}} className="CompanySelectMenu"  value={this.state.value} onChange={this.handleChange}>
-                <MenuItem className="CompanySelectMenuItem" children={<span><img style={{height: "20px", marginBottom: "-10px"}} src="https://www.facebookbrand.com/img/fb-art.jpg"/></span>} value={1} primaryText="Facebook" />
-                <MenuItem className="CompanySelectMenuItem" children={<span><img style={{height: "20px", marginBottom: "-10px"}} src="http://northdallasgazette.com/wordpress/wp-content/uploads/2016/05/Google-logo-2015-G-icon.png"/></span>} value={2} primaryText="Google" />
-                <MenuItem className="CompanySelectMenuItem" children={<span><img style={{height: "20px", marginBottom: "-10px"}} src="http://www.bladecreativebranding.com/blog/wp-content/uploads/2014/11/New-2014-Air-Bnb-Logo.png"/></span>} value={3} primaryText="Airbnb" />
-              </DropDownMenu>
-              <FlatButton backgroundColor="#6A96D2" icon={<ContentAdd className="TalentAddButton"/>} label="Post a job" labelStyle={{fontSize: "13px", color: "white", fontWeight: "100", letterSpacing: "0.5px"}} />
+              <FlatButton
+                style={{margin: "5px", marginTop: "10px"}}
+                onClick = {this.handlePostJob}
+                backgroundColor="#6A96D2"
+                icon={<ContentAdd className="TalentAddButton"/>}
+                label="Post a job"
+                labelStyle={{fontSize: "13px", color: "white", fontWeight: "100", letterSpacing: "0.5px"}} />
             </div>
         </Toolbar>
         <ListItem

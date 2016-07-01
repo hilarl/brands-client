@@ -8,6 +8,7 @@ import DashboardContainer from './containers/Dashboard/DashboardContainer';
 import CompanyHome from './containers/Dashboard/CompanyHome/CompanyHome';
 import PageManager from './containers/Dashboard/PageManager/PageManager';
 import TalentManager from './containers/Dashboard/TalentManager/TalentManager';
+import NewJobPage from './containers/Dashboard/TalentManager/NewJobPage/NewJobPage';
 import ApplicantsPage from './containers/Dashboard/TalentManager/ApplicantsPage/ApplicantsPage';
 import UserManager from './containers/Dashboard/UserManager/UserManager';
 import Organization from './containers/Dashboard/Organization/Organization';
@@ -29,6 +30,7 @@ export default (
       </Route>
       <Route path="/users" component={UserManager} />
       <Route path="/organization" component={Organization} />
+      <Route path="/new-job" component={NewJobPage} />
     </Route>
     <Route path="*" component={NotFoundPage}/>
   </Route>

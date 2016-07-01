@@ -36,8 +36,8 @@ class TalentManager extends Component {
             <Divider />
             <MenuItem className="TalentLeftMenu" primaryText="Currents Jobs" leftIcon={<ContentLink />} />
             <MenuItem className="TalentLeftMenu" primaryText="All Jobs" leftIcon={<ContentCopy />} />
-            <MenuItem className="TalentLeftMenu" primaryText="Analytics" leftIcon={<Download />} />
             <Divider />
+            <MenuItem className="TalentLeftMenu" primaryText="Analytics" leftIcon={<Download />} />
             <MenuItem className="TalentLeftMenu" primaryText="Settings" leftIcon={<Delete />} />
           </Menu>
         </div>

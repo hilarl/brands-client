@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {List, ListItem} from 'material-ui/List';
 import Checkbox from 'material-ui/Checkbox';
+import FlatButton from 'material-ui/FlatButton';
 import '../CompanyHome.scss';
 import * as calendarActions from '../../../../actions/CalendarActions';
 
@@ -10,26 +11,20 @@ import { bindActionCreators } from 'redux';
 class CalendarBlock extends Component {
   constructor(props) {
     super(props);
-    this.renderEventList = this.renderEventList.bind(this)
   }
 
   componentWillMount() {
-    
-  }
 
-  renderEventList() {
-    console.log (this.props.events)
   }
 
   render() {
     return(
       <List className="ScheduleList">
-        {this.renderEventList()}
+        <FlatButton style={{border: "2px solid #eee", height: "50px", width: "87%", marginLeft: "20px"}} labelStyle={{textTransform: "capitalize", color: "#3883F7", letterSpacing: "0.5px"}} label="Connect Google Calendar" />
         <ListItem className="ScheduleListItem" primaryText="Meeting with the board of directors" secondaryText="Jan 9, 2014" leftCheckbox={<Checkbox />} />
         <ListItem className="ScheduleListItem" primaryText="Meeting with the board of directors" secondaryText="Jan 9, 2014" leftCheckbox={<Checkbox />} />
         <ListItem className="ScheduleListItem" primaryText="Call with Paul" secondaryText="Jan 9, 2014" leftCheckbox={<Checkbox />} />
         <ListItem className="ScheduleListItem" primaryText="Interview with Developer Candidates" secondaryText="Jan 9, 2014" leftCheckbox={<Checkbox />}/>
-        <ListItem className="ScheduleListItem" primaryText="Lunch with department head" secondaryText="Jan 9, 2014" leftCheckbox={<Checkbox />}/>
       </List>
     );
   }
