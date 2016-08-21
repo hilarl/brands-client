@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
 
-import FontIcon from 'material-ui/FontIcon';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
 import DropDownMenu from 'material-ui/DropDownMenu';
-import RaisedButton from 'material-ui/RaisedButton';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
-import {List, ListItem} from 'material-ui/List';
+import Toolbar from 'material-ui/Toolbar';
+import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import Subheader from 'material-ui/Subheader';
+
 import Avatar from 'material-ui/Avatar';
-import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+import { grey400 } from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/IconMenu';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 import FlatButton from 'material-ui/FlatButton';
-import {grey50, yellow500, blue500} from 'material-ui/styles/colors';
 
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 const iconButtonElement = (
   <IconButton
@@ -50,12 +46,16 @@ class ApplicantsPage extends Component {
     this.handleCompanyChange = this.handleCompanyChange.bind(this);
   }
 
-  handleChange(event, index, value) { this.setState({value})};
+  handleChange(event, index, value) {
+    this.setState({value});
+  }
 
-  handleCompanyChange(event, index, value) { this.setState({companyValue: value})};
+  handleCompanyChange(event, index, value) {
+    this.setState({companyValue: value});
+  }
 
   handlePostJob() {
-    browserHistory.push('new-job')
+    browserHistory.push('new-job');
   }
 
   render() {

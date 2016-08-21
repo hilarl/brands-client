@@ -1,9 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
 import './CompanyHome.scss';
-import MenuItem from 'material-ui/MenuItem';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -16,7 +12,6 @@ import TalentChartBlock from './components/TalentChartBlock';
 import BrandChartBlock from './components/BrandChartBlock';
 
 import AddOrganizationDialog from './components/AddOrganizationDialog';
-import RaisedButton from 'material-ui/RaisedButton';
 
 class CompanyHome extends Component {
   constructor(props) {
@@ -30,28 +25,33 @@ class CompanyHome extends Component {
     this.handleModalClose = this.handleModalClose.bind(this);
   }
 
-  handleChange(event, index, value) { this.setState({value})};
+  handleChange(event, index, value) {
+    this.setState({value});
+  }
+
   index() {
-    return null
+    return null;
   }
 
   handleModalOpen() {
     this.setState({open: true});
-  };
+  }
 
   handleModalClose() {
     this.setState({open: false});
-  };
+  }
 
   render() {
 
     const actions = [
       <FlatButton
+        key="Cancel"
         label="Cancel"
         primary={true}
         onTouchTap={this.handleModalClose}
       />,
       <FlatButton
+        key="Save"
         label="Save"
         backgroundColor="#6A96D2"
         hoverColor="#5E87C0"
@@ -60,7 +60,7 @@ class CompanyHome extends Component {
         primary={true}
         keyboardFocused={true}
         onTouchTap={this.handleModalClose}
-      />,
+      />
     ];
 
     return (
@@ -116,7 +116,7 @@ class CompanyHome extends Component {
   }
 }
 
-CompanyHome.PropTypes = {
+CompanyHome.propTypes = {
   index: PropTypes.array.isRequired
 };
 

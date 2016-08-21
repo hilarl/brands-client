@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import AppBar from 'material-ui/AppBar';
 import styles from './styles';
 import FlatButton from 'material-ui/FlatButton';
@@ -34,7 +34,8 @@ class Header extends Component {
   }
 
   handleOpen() {
-    this.setState({dialogOpen: true});
+    let state = Object.assign(this.state, {dialogOpen: true});
+    this.setState(state);
   }
 
   handleClose() {
@@ -46,21 +47,21 @@ class Header extends Component {
     event.preventDefault();
     this.setState({
       menu: true,
-      anchorEl: event.currentTarget,
+      anchorEl: event.currentTarget
     });
-  };
+  }
 
   handleRequestClose() {
     this.setState({
-      menu: false,
+      menu: false
     });
-  };
+  }
 
   signOutButton() {
     return this.props.authenticate(false);
   }
 
-  handleCompanyChange(event, index, value) { this.setState({companyValue: value})};
+  handleCompanyChange(event, index, value) { this.setState({companyValue: value}); }
 
   signInButton() {
     if(!this.props.authenticated) {
@@ -107,7 +108,7 @@ class Header extends Component {
             <MenuItem className="UserMenuItem" primaryText="Refresh" />
             <MenuItem className="UserMenuItem" primaryText="Help &amp; feedback" />
             <MenuItem className="UserMenuItem" primaryText="Settings" />
-            <MenuItem className="UserMenuItem" primaryText="Sign out" onTouchTap={() => {this.signOutButton()}} />
+            <MenuItem className="UserMenuItem" primaryText="Sign out" onTouchTap={() => {this.signOutButton();}} />
           </Menu>
         </Popover>
         <FlatButton
@@ -147,10 +148,15 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+Header.propTypes = {
+  authenticate: PropTypes.func.isRequired,
+  authenticated: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => {
   return {
     authenticated: state.authenticate
   };
-}
+};
 
 export default connect(mapStateToProps, actions)(Header);

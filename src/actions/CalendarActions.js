@@ -4,7 +4,7 @@ export function fetchEvents() {
   return {
     type: CALENDAR_EVENTS,
     payload: events
-  }
+  };
 }
 
 const events = [
@@ -43,4 +43,4 @@ const events = [
   "timeZone": "GMT",
   "completed": true
   }
-]
+];

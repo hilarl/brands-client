@@ -69,6 +69,6 @@ const styles= {
       borderColor: mainColor
     }
   }
-}
+};
 
 export default styles;

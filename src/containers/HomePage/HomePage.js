@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 class HomePage extends Component {
   index() {
-    return null
+    return null;
   }
   render() {
     return (

@@ -19,6 +19,6 @@ const SignUpPageStyles = {
       borderColor: mainColor
     }
   }
-}
+};
 
 export default SignUpPageStyles;

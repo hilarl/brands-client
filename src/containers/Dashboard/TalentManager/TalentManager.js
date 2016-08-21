@@ -10,8 +10,6 @@ import ContentCopy from 'material-ui/svg-icons/content/archive';
 import Download from 'material-ui/svg-icons/action/assessment';
 import Delete from 'material-ui/svg-icons/action/settings';
 
-import ApplicantsPage from './ApplicantsPage/ApplicantsPage';
-
 import './TalentManager.scss';
 
 
@@ -19,11 +17,11 @@ class TalentManager extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 1,
+      value: 1
     };
   }
   index() {
-    return null
+    return null;
   }
 
   render() {
@@ -47,8 +45,9 @@ class TalentManager extends Component {
   }
 }
 
-TalentManager.PropTypes = {
-  index: PropTypes.array.isRequired
+TalentManager.propTypes = {
+  index: PropTypes.array.isRequired,
+  children: PropTypes.element.isRequired
 };
 
 export default TalentManager;

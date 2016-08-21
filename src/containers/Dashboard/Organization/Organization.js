@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
 
 class Organization extends Component {
   index() {
-    return null
+    return null;
   }
   render() {
     return (

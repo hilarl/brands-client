@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import SignUpPageStyles from './styles.js';
 
-const SignUpPage = (props) => {
+const SignUpPage = () => {
   return (
     <div className="col-md-4 col-md-offset-4" style={{marginTop: "30px"}}>
       <h1 style={SignUpPageStyles.SignUpHeading}>Sign Up</h1>
@@ -44,6 +44,6 @@ const SignUpPage = (props) => {
       </form>
     </div>
   );
-}
+};
 
 export default SignUpPage;

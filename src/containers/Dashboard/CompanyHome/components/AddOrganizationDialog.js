@@ -5,7 +5,6 @@ import TextField from 'material-ui/TextField';
 import Divider from 'material-ui/Divider';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import Chip from 'material-ui/Chip';
 import AutoComplete from 'material-ui/AutoComplete';
 
 const styles = {
@@ -28,7 +27,7 @@ const styles = {
     right: 0,
     left: 0,
     width: '100%',
-    opacity: 0,
+    opacity: 0
   },
   formFieldContainer: {
     padding: "15px 0"
@@ -54,7 +53,7 @@ class AddOrganizationDialog extends Component {
   }
 
   handleChange (event, index, value) {
-    this.setState({value})
+    this.setState({value});
   }
 
   handleImageChange(e) {
@@ -68,9 +67,8 @@ class AddOrganizationDialog extends Component {
         file: file,
         imagePreviewUrl: reader.result
       });
-    }
-
-    reader.readAsDataURL(file)
+    };
+    reader.readAsDataURL(file);
   }
 
   handleUpdateInput (value) {
@@ -78,15 +76,14 @@ class AddOrganizationDialog extends Component {
       dataSource: [
         value,
         value + value,
-        value + value + value,
-      ],
+        value + value + value
+      ]
     });
-  };
+  }
 
   render() {
 
     let {imagePreviewUrl} = this.state;
-    let {file} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
       $imagePreview = (<img style={{width: "100%"}} src={imagePreviewUrl} />);

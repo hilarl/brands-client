@@ -12,12 +12,12 @@ class PageManager extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 3,
+      value: 3
     };
   }
 
   index() {
-    return null
+    return null;
   }
   render() {
 

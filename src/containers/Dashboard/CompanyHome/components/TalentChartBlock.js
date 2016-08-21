@@ -1,11 +1,11 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
 
-const TalentChartBlock = (props) => {
+const TalentChartBlock = () => {
   return(
     <Line data={data} />
   );
-}
+};
 
 const data = {
   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
