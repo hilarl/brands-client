@@ -15,6 +15,6 @@ const styles = {
   LogoStyles: {
     color: "#6A96D2"
   }
-}
+};
 
 export default styles;

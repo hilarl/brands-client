@@ -37,13 +37,13 @@ CalendarBlock.PropTypes = {
 const mapStateToProps = (state) => {
   return {
     events: state.events
-  }
-}
+  };
+};
 
 const mapActionsToProps = (dispatch) => {
   return {
     actions: bindActionCreators(calendarActions, dispatch)
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapActionsToProps)(CalendarBlock);

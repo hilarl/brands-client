@@ -4,5 +4,5 @@ export function authenticate(isLoggedIn) {
   return {
     type: LOGIN_USER,
     payload: isLoggedIn
-  }
+  };
 }

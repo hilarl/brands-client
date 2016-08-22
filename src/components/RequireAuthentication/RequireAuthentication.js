@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {
 
     componentWillMount() {
-      console.log(this.props.authenticated)
       if(!this.props.authenticated) {
-        browserHistory.push('/')
+        browserHistory.push('/');
       }
     }
 
     componentWillUpdate(nextProps) {
-      console.log(this.props.authenticated)
       if(!nextProps.authenticated) {
-        browserHistory.push('/')
+        browserHistory.push('/');
       }
     }
 
     render() {
-      console.log(this.props.authenticated)
-      return <ComposedComponent {...this.props} />
+      return <ComposedComponent {...this.props} />;
     }
   }
 
+  Authentication.propTypes = {
+    authenticated: PropTypes.object.isRequired
+  };
+
   const mapStateToProps = (state) => {
-    return {authenticated: state.authenticate}
-  }
-  return connect(mapStateToProps)(Authentication)
+    return {authenticated: state.authenticate};
+  };
+  return connect(mapStateToProps)(Authentication);
 }

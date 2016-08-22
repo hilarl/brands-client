@@ -1,11 +1,11 @@
 import React from 'react';
 import {Polar} from 'react-chartjs-2';
 
-const BrandChartBlock = (props) => {
+const BrandChartBlock = () => {
   return(
     <Polar data={data2} />
   );
-}
+};
 
 const data2 = {
   datasets: [{

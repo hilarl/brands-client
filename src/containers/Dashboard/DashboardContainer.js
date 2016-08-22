@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
-const DashboardContainer = (props) => {
+const DashboardContainer = () => {
   return (
     <div>
       <div className="container-fluid CompanyDashboardNav">
@@ -12,6 +12,6 @@ const DashboardContainer = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default DashboardContainer;

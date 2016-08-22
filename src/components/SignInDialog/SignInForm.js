@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import * as actions from '../../actions/AuthActions';
 import styles from './styles';
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import './SignInForm.scss';
 
 class SignInForm extends Component {
@@ -18,19 +17,19 @@ class SignInForm extends Component {
       emailForm: false,
       signUpForm: false,
       forgotPasswordForm: false
-    }
+    };
     this.emailOnChange = this.emailOnChange.bind(this);
     this.passwordOnChange = this.passwordOnChange.bind(this);
     this.signInForm = this.signInForm.bind(this);
   }
 
   emailOnChange(event) {
-    console.log(this.state.email);
+    //console.log(this.state.email);
     this.setState({ email: event.target.value });
   }
 
   passwordOnChange(event) {
-    console.log(this.state.password);
+    //console.log(this.state.password);
     this.setState({ password: event.target.value });
   }
 
@@ -66,7 +65,7 @@ class SignInForm extends Component {
               href="#">Sign in or sign up with email</a>
           </div>
         </div>
-      )
+      );
     }
     if(this.state.emailForm) {
       return(
@@ -92,7 +91,7 @@ class SignInForm extends Component {
             style={styles.SubmitButton}
             labelStyle={styles.buttonStyles}
             onClick={()=> {
-              console.log(this.props.return)
+              //console.log(this.props.return)
               this.props.authenticate(true);
               browserHistory.push('/home/');
             }}
@@ -127,7 +126,7 @@ class SignInForm extends Component {
             }} href="#">Or sign in with facebook, twitter or google</a>
           </div>
         </div>
-      )
+      );
     }
     if(this.state.signUpForm) {
       return(
@@ -149,7 +148,7 @@ class SignInForm extends Component {
             }}
           />
         </div>
-      )
+      );
     }
     if(this.state.forgotPasswordForm) {
       return(
@@ -167,11 +166,11 @@ class SignInForm extends Component {
             style={styles.SubmitButton}
             labelStyle={styles.buttonStyles}
             onClick={()=> {
-              console.log('password')
+              //console.log('password')
             }}
           />
         </div>
-      )
+      );
     }
   }
 
@@ -185,13 +184,14 @@ class SignInForm extends Component {
 }
 
 SignInForm.propTypes = {
-  //myProp: PropTypes.string.isRequired
+  authenticate: PropTypes.func.isRequired,
+  authenticated: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     authenticated: state.authenticate
   };
-}
+};
 
 export default connect(mapStateToProps, actions)(SignInForm);

@@ -4,7 +4,6 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './containers/HomePage/HomePage';
 import Dashboard from './containers/Dashboard/Dashboard';
-import DashboardContainer from './containers/Dashboard/DashboardContainer';
 import CompanyHome from './containers/Dashboard/CompanyHome/CompanyHome';
 import PageManager from './containers/Dashboard/PageManager/PageManager';
 import TalentManager from './containers/Dashboard/TalentManager/TalentManager';

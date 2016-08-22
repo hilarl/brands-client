@@ -31,7 +31,7 @@ const fruit = [
   'Salal berry', 'Satsuma', 'Star fruit', 'Strawberry', 'Squash', 'Salmonberry',
   'Tamarillo', 'Tamarind', 'Tomato', 'Tangerine',
   'Ugli fruit',
-  'Watermelon',
+  'Watermelon'
 ];
 
 class NewJobPage extends Component {
@@ -52,31 +52,33 @@ class NewJobPage extends Component {
       minDate: minDate,
       maxDate: maxDate,
       autoOk: true,
-      disableYearSelection: true,
+      disableYearSelection: true
     };
     this.handleChangeMinDate = this.handleChangeMinDate.bind(this);
     this.handleChangeMaxDate = this.handleChangeMaxDate.bind(this);
   }
 
-  handleChange (event, index, value) {this.setState({value})};
+  handleChange (event, index, value) {
+    this.setState({value});
+  }
 
   handleChangeMinDate (event, date) {
     this.setState({
-      minDate: date,
+      minDate: date
     });
-  };
+  }
 
   handleChangeMaxDate (event, date) {
     this.setState({
-      maxDate: date,
+      maxDate: date
     });
-  };
+  }
 
   handleToggle (event, toggled) {
     this.setState({
-      [event.target.name]: toggled,
+      [event.target.name]: toggled
     });
-  };
+  }
 
     render() {
       return (
